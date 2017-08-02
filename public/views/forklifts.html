@@ -1,0 +1,48 @@
+
+
+
+<section layout="row" flex>
+
+    <md-content flex>
+        <md-toolbar layout="row"  layout-align="start center" class="toolbar">
+
+            <div flex="100">
+                <h1 class="md-toolbar-tools">
+                    <div class="md-title">
+                        <span>Forklifts</span>
+                    </div>
+                </h1>
+
+
+            </div>
+
+        </md-toolbar>
+
+
+        <div layout="row" layout-wrap layout-padding >
+            <div ng-repeat="forklift in forklifts | filter:searchText" layout="row" layout-md="column"  flex="33" flex-md="100">
+                <a  href="javascript:void(0)" ng-click="openEditForkliftDialog($event, forklift, forklifts.indexOf(forklift))"  class="card-link" flex>
+                    <md-card class="md-raised">
+                        <md-card-content >                        
+                            <b>name</b>: {{forklift.name}} <br>
+                            <b>model</b>: {{forklift.model}} <br>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Hyster_H80FT_Fortis_Model.jpg/314px-Hyster_H80FT_Fortis_Model.jpg" width="350" height="267">
+                        </md-card-content>
+                    </md-card>
+                </a>
+            </div>
+
+        </div>
+
+        <div layout="row" layout-align="end end" class="add-button">
+
+            <md-button class="md-fab" ng-click="openAddForkliftDialog($event)" style="background-color: #448AFF; padding-top: 7px;" aria-label="add">
+
+                <img src="/images/add_white.png" style="width: 24px; height: 24px;">
+            </md-button>
+        </div>
+
+    </md-content>
+
+
+</section>
